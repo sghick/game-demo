@@ -1,0 +1,11 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS 'SMRSkill' ('pa' INTEGER, 'sa_scale' INTEGER, 'skill_id' TEXT, 'pa_scale' INTEGER, 'sa_crit_percent' INTEGER, 'pa_crit_percent' INTEGER, 'sa' INTEGER, 'sa_crit_rate' INTEGER, 'pa_crit_rate' INTEGER, 'name' TEXT);
+INSERT INTO "SMRSkill"("rowid","pa","sa_scale","skill_id","pa_scale","sa_crit_percent","pa_crit_percent","sa","sa_crit_rate","pa_crit_rate","name") VALUES(1,0,0,"SS10001",0,130,130,0,50,50,"普通攻击");
+INSERT INTO "SMRSkill"("rowid","pa","sa_scale","skill_id","pa_scale","sa_crit_percent","pa_crit_percent","sa","sa_crit_rate","pa_crit_rate","name") VALUES(2,20,0,"SS10002",20,0,300,0,0,80,"无双");
+CREATE TABLE IF NOT EXISTS 'SMRMetaRole' ('pa' INTEGER, 'hp' INTEGER, 'pd' INTEGER, 'mp' INTEGER, 'skill_ids' TEXT, 'role_id' TEXT, 'sa' INTEGER, 'sd' INTEGER, 'name' TEXT);
+INSERT INTO "SMRMetaRole"("rowid","pa","hp","pd","mp","skill_ids","role_id","sa","sd","name") VALUES(1,90,90,90,90,"SS10001,SS10002","1000001",50,50,"主公");
+INSERT INTO "SMRMetaRole"("rowid","pa","hp","pd","mp","skill_ids","role_id","sa","sd","name") VALUES(2,89,94,89,89,"SS10001","1000002",43,45,"曹操");
+INSERT INTO "SMRMetaRole"("rowid","pa","hp","pd","mp","skill_ids","role_id","sa","sd","name") VALUES(3,80,92,92,92,"SS10001","1000003",40,48,"刘备");
+INSERT INTO "SMRMetaRole"("rowid","pa","hp","pd","mp","skill_ids","role_id","sa","sd","name") VALUES(4,93,89,90,90,"SS10001","1000004",40,45,"关羽");
+COMMIT;
